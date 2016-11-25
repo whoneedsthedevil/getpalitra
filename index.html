@@ -1,0 +1,81 @@
+<!DOCTYPE html5>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Adaptive</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|PT+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper">
+            <ul class="top-menu">
+                <li> Home </li>
+                <li> About me </li>
+                <li> Portfolio </li>
+                <li> Contact </li>
+            </ul>
+            <ul class="mobile-menu">
+                <li>MENU
+                    <ul class="toggle-menu">
+                        <li> Home </li>
+                        <li> About me </li>
+                        <li> Portfolio </li>
+                        <li> Contact </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="scroll-section" id="main-scroll-event">
+            <span>scroll down to see more</span>
+            <img src="./assets/img/Double_Arrow.png" alt="scroll down to see more">
+        </div>
+    </header>
+
+    <section class="about" id="about-section">
+        <div class="wrapper">
+            <ul class="top-menu">
+                <li> Home </li>
+                <li> About me </li>
+                <li> Portfolio </li>
+                <li> Contact </li>
+            </ul>
+        </div>
+
+        <div class="wrapper content">
+            <div class="personal-photo">
+                <img src="./assets/img/Jason_Wood.jpg" alt="Personal Photo">
+            </div>
+            <div class="about-me">
+                <div class="title">About me</div>
+                <div class="text">
+                <p>    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                </div>
+                <div class="signature">Jason Wood</div>
+            </div>
+        </div>
+
+        <div class="scroll-section">
+            <span>keep scrolling, there is still more to come.</span>
+            <img src="./assets/img/Double_Arrow_grey.png" alt="scroll down to see more">
+        </div>
+    </section>
+    <script src="./assets/js/jquery-3.1.1.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $("#main-scroll-event").click(function () {
+            var destination = $("#about-section").offset().top;
+            $('body').animate({ scrollTop: destination }, 1100);
+         
+            return false; 
+        });
+        $(".mobile-menu").click(function(){
+            $(".toggle-menu").toggle("fast");
+        })
+    });
+    </script>
+</body>
+</html>

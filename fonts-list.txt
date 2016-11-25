@@ -1,0 +1,15 @@
+fonts: OpenSans, OpenSans Light, NexaLight, PTSans Regular
+
+Menu: 24pt PTSans [Regular]
+
+Scroll Down: 18pt OpenSans [Regular]
+
+About Me MENU: 24pt NexaLight [Regular]
+
+About Me: 60pt OpenSans [Regular]
+text: 24pt OpenSans Light
+
+Jason Wood: 36pt OpenSans [Regular]
+
+
+keep scrolling, there is still more to come. : 18ot OpenSans [Regular]

@@ -1,0 +1,350 @@
+@import 'reset';
+
+$bg-color: #fff;
+
+$text-font: 300 24px/1.2 'Open Sans', sans-serif;
+$menu-font: 24px/1.2 'PT Sans', sans-serif;
+$mobile-menu-font: 700 24px/1.2 'PT Sans', sans-serif;
+$scroll-font: 18px/1.2 'Open Sans', sans-serif;
+$about-menu-font: 24px/1.2 'NexaLight';
+$about-title-font: 60px/2 'OpenSans', sans-serif;
+$about-text-font: 300 24px/1.2 'Open Sans', sans-serif;
+$signature-font: 600 36px/1.4 'Open Sans';
+
+$main-text-color: #f1f1f1;
+$about-menu-color: #bebebe;
+$about-text-color: #202020;
+$about-scroll-color: #cbcbcb;
+
+@font-face {
+    font-family: 'NexaLight';
+    src: url('../fonts/NexaLight.eot');
+    src: url('../fonts/NexaLight.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/NexaLight.woff2') format('woff'),
+         url('../fonts/NexaLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    max-width: 100%;
+    background: $bg-color;
+    font: $text-font;
+}
+
+@mixin wrapper($width, $padding) {
+    width: $width;
+    max-width: $width;
+    padding: $padding;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+@mixin menu($color) {
+    width: 600px;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    color: $color;
+    text-transform: uppercase;
+}
+
+@mixin scrolls($font, $font-color) {
+    width: 600px;
+    cursor: pointer;
+    font: $font;
+    color: $font-color;
+    text-transform: uppercase;
+    display: flex;
+    flex-flow: column nowrap;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    margin: 50px 0 0 -300px;
+}
+
+header {
+    position: relative;
+    height: 100%;
+    min-height: 100%;
+    background: url('../img/main_bg.jpg') no-repeat center center;
+    background-size: 100% 100%;
+
+    .wrapper {
+        @include wrapper(80%, 40px);
+        border-bottom: 1px solid $main-text-color;
+
+        ul.top-menu {
+            @include menu($main-text-color);
+            justify-content: space-around;
+
+            li {
+                margin: auto;
+                font: $menu-font;
+            }
+        }
+        ul.mobile-menu {
+            display:none;
+            justify-content: flex-start;
+        }
+    }
+    
+    .scroll-section {
+        @include scrolls($scroll-font, $main-text-color);
+
+        span {
+            text-align: center;
+        }
+        img {
+            margin: 25px auto 0;
+        }
+    }
+}
+
+section.about {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 70px;
+    background: $bg-color;
+
+    .wrapper {
+        @include wrapper(80%,40px);
+        border-bottom: 1px solid #bebebe;
+
+        ul.top-menu {
+            @include menu($about-menu-color);
+            justify-content: space-around;
+
+            li {
+                margin: auto;
+                font: $about-menu-font;
+            }
+        }
+
+        .personal-photo {
+            margin: 75px 40px 85px;
+            text-align: center;
+            overflow: hidden;
+            flex-basis: 50%;
+
+            img {
+                width: 100%;
+                max-height: 100%;
+            }
+        }
+
+        .about-me {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            flex-basis: 50%;
+
+            .title {
+                font: $about-title-font;
+                margin: 0;
+                color: $about-text-color;
+                text-transform: uppercase;
+            }
+
+            .text {
+                font: $about-text-font;
+                color: $about-text-color;
+
+                p:not(:last-child) {
+                    margin-bottom: 10px;
+                }                
+            }
+
+            .signature {
+                font: $signature-font;
+                color: $about-text-color;
+                font-weight: 800;
+                margin: 60px 0;
+            }
+        }
+
+    }
+    
+    .content {
+        border: none;
+    }
+
+    .scroll-section {
+        @include scrolls($scroll-font, $about-scroll-color);
+
+        span {
+            text-align: center;
+        }
+        img {
+            margin: auto;
+            padding-top: 20px;
+        }
+    }
+
+}
+
+.scroll-section:hover {
+    color: lighten($about-scroll-color, 10%);
+
+    span {
+        transform: translateY(10px);
+        font-size: 15px;
+        transition: .3s;
+    }
+
+    img {
+        animation-duration: .5s;
+        animation-name: scrollPlay;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+}
+
+li:hover {
+    cursor: pointer;
+    color: #5e5e5e;
+    transition: .3s;
+}
+
+@keyframes scrollPlay {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(20px);
+  }
+}
+
+
+
+@media only screen and (max-device-width: 769px) {
+    header {
+        background-size: auto;
+        
+        .scroll-section {
+            visibility: hidden;
+        }
+    }
+    section.about {
+        .wrapper {
+            width: 100%;
+            max-width: 100%;
+            padding: 40px 0;
+        }
+        .content {
+            flex-flow: column nowrap;
+            width: 100%;
+            max-width: 100%;
+            padding: 0 0 70px 0;
+
+            .personal-photo {
+                margin: 0;
+                width: 100%;
+                flex-basis: auto;
+            }
+
+            .about-me {
+                margin-left: 50px;
+                margin-right: 35px;
+                flex-basis: auto;
+                
+                .title {
+                    line-height: 4;
+                    margin: 0;
+                }
+
+                .text {
+                    line-height: 2;
+                }
+            }
+        }
+
+        .scroll-section {
+           margin-top: 5px;
+           bottom: 80px;
+        }
+    }
+}
+
+@media only screen and (max-device-width: 320px) {
+    .top-menu, .scroll-section {
+        display: none!important;
+    }
+    
+    header {
+        height: 40%;
+        min-height: 268px;
+        background: url(../img/mobile_bg.jpg) no-repeat;
+        background-size: cover;
+
+    
+        .wrapper {
+            border: none;
+
+            ul.mobile-menu {
+                display: block;
+                @include menu($main-text-color);
+                position: relative;
+
+                li {
+                    font: $mobile-menu-font;
+                    margin-left: 15px;
+
+                    ul.toggle-menu {
+                        display: none;
+
+                        li {
+                            color: $main-text-color;
+                            padding: 10px 0;
+                        }
+                    }
+                }
+
+                li:before {
+                    position: absolute;
+                    top: -10px;
+                    left: -20px;
+                    content: '\221E';
+                    font-size: 36px;
+                }
+            }
+        }
+
+    }
+
+    section.about  {
+        .wrapper {
+            padding: 0;
+            border: none;
+        }
+
+        .content {
+            flex-flow: column nowrap;
+            max-width: 100%;
+            padding: 0 0 70px 0;
+
+            .personal-photo {
+                overflow-x: hidden;
+
+                img {
+                width: 200%;
+                margin-left: -50%;
+                max-height: 100%;
+                }
+            }
+
+           .about-me .title {
+               font-size: 30px;
+           }
+           .about-me .text, .about-me .signature {
+               font-size: 18px;
+               line-height: 2.78;
+           } 
+        }
+    
+    }
+    
+}
