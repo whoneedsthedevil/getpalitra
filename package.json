@@ -1,0 +1,30 @@
+{
+  "name": "colormaps",
+  "version": "1.0.0",
+  "description": "The program gets the primary colors of the specified image using two third-party js-plugins",
+  "main": "index.js",
+  "scripts": {
+    "test": "test run"
+  },
+  "keywords": [
+    "primary",
+    "colors",
+    "by",
+    "url",
+    "of",
+    "image"
+  ],
+  "author": "devil",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.27.3",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.14.1",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "extract-text-webpack-plugin": "^2.1.0",
+    "jquery": "^3.1.1"
+  }
+}

@@ -53,7 +53,6 @@ table {
   font-style: normal; }
 body {
   max-width: 100%;
-  overflow-x: hidden;
   background: #fff;
   font: 300 24px/1.2 "Open Sans", sans-serif; }
 
@@ -89,16 +88,8 @@ header {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
-    text-align: center;
     align-items: center;
     margin: 30px auto; }
-    header .image-content .image-box {
-      max-width: 80%;
-      margin: auto;
-      max-height: 270px;
-      overflow: hidden; }
-      header .image-content .image-box img {
-        width: 100%; }
     header .image-content .pallete {
       display: flex;
       flex-flow: row nowrap;
@@ -106,8 +97,6 @@ header {
       header .image-content .pallete .color {
         width: 35px;
         height: 35px;
-        margin: 20px;
-        background: #f1f1f1;
         flex-basis: 20%; }
   header .scroll-section {
     width: 600px;
@@ -151,7 +140,7 @@ section.about {
         margin: auto;
         font: 24px/1.2 "NexaLight"; }
     section.about .wrapper .personal-photo {
-      margin: 35px 40px 85px;
+      margin: 75px 40px 85px;
       text-align: center;
       overflow: hidden;
       flex-basis: 50%; }
@@ -164,7 +153,7 @@ section.about {
       justify-content: center;
       flex-basis: 50%; }
       section.about .wrapper .about-me .title {
-        font: 56px/2 "OpenSans", sans-serif;
+        font: 60px/2 "OpenSans", sans-serif;
         margin: 0;
         color: #202020;
         text-transform: uppercase; }
@@ -220,7 +209,7 @@ li:hover {
     transform: translateY(0px); }
   to {
     transform: translateY(20px); } }
-@media all and (max-width: 869px) {
+@media all and (max-device-width: 769px) {
   header {
     background-size: auto; }
     header .scroll-section {
@@ -251,7 +240,7 @@ li:hover {
   section.about .scroll-section {
     margin-top: 5px;
     bottom: 80px; } }
-@media all and (max-width: 520px) {
+@media all and (max-device-width: 320px) {
   .top-menu, .scroll-section {
     display: none !important; }
 
@@ -260,11 +249,8 @@ li:hover {
     min-height: 268px;
     background: url(../img/mobile_bg.jpg) no-repeat;
     background-size: cover; }
-    header .image-content {
-      display: none; }
     header .wrapper {
-      border: none;
-      overflow: hidden; }
+      border: none; }
       header .wrapper ul.mobile-menu {
         display: block;
         width: 600px;
