@@ -61,7 +61,7 @@ body {
 header {
   position: relative;
   height: 100%;
-  min-height: 750px;
+  min-height: 850px;
   background: url(../assets/img/main_bg.jpg) no-repeat center center;
   background-size: 100% 100%; }
   header .wrapper {
@@ -83,6 +83,10 @@ header {
       header .wrapper ul.top-menu li {
         margin: auto;
         font: 24px/1.2 "PT Sans", sans-serif; }
+        header .wrapper ul.top-menu li a {
+          color: #f1f1f1;
+          outline: none;
+          text-decoration: none; }
     header .wrapper ul.mobile-menu {
       display: none;
       justify-content: flex-start; }
@@ -98,7 +102,6 @@ header {
       max-width: 80%;
       width: 600px;
       margin: auto;
-      max-height: 330px;
       overflow: hidden; }
       header .image-content .image-box .image-url {
         position: absolute;
@@ -107,9 +110,8 @@ header {
         margin: 6px;
         width: 40px;
         height: 40px;
-        border-left: 1px solid #f5f5f5;
-        border-bottom: 1px solid #f5f5f5;
-        background-size: 30px 30px;
+        border-top: 1px solid #f5f5f5;
+        border-right: 1px solid #f5f5f5;
         background: rgba(150, 150, 150, 0.3); }
       header .image-content .image-box .image-url:hover {
         border-color: transparent;

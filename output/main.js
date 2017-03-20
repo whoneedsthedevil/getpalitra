@@ -19641,24 +19641,23 @@ var app = new __WEBPACK_IMPORTED_MODULE_1_vue_dist_vue_js___default.a({
         }
       };
       img.crossOrigin = 'Anonymous';
-      img.src = $('.image-box img').attr('src');
+      img.src = $('.image-box .exampl-image').attr('src');
     },
     checkNewImage: function () {
-      $('.image-url-input').show().addClass('visible');
-      $('.image-url-input').animate({ 'marginRight': '25px', 'opacity': '1' }, 700);
 
-      if ($('.image-url-input').css('display') == 'block') {
-
+      if ($('.image-url-input').hasClass('visible')) {
         var text = $(".image-url-input").val();
         var result = text.match(/(https?:\/\/)?([\/\-\_\&\w\.]+)\.?(jpg|jpeg|png)/i);
 
         if (result) {
           $(".exampl-image").replaceWith("<img src='" + result.input + "' class='exampl-image'>");
           console.log(result.input);
-          $('.image-url-input').hide(200).removeClass('visible');
+          $('.image-url-input').removeClass('visible');
         } else {
           console.log('not available link');
         }
+      } else {
+        $('.image-url-input').addClass('visible');
       }
     },
     handler: function () {
