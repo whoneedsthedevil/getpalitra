@@ -169,8 +169,10 @@ header {
                 transition: transform .3s;
             }
 
-            img {
-                width: 100%;
+            .exampl-image {
+                max-width: 100%;
+                min-height: 110px;
+                max-height: 500px;
             }
             img.search-icon {
                 padding: 6px;

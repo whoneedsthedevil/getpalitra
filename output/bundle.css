@@ -143,8 +143,10 @@ header {
         display: block;
         transform: translateX(-45px);
         transition: transform .3s; }
-      header .image-content .image-box img {
-        width: 100%; }
+      header .image-content .image-box .exampl-image {
+        max-width: 100%;
+        min-height: 110px;
+        max-height: 500px; }
       header .image-content .image-box img.search-icon {
         padding: 6px; }
     header .image-content .palette {
