@@ -17,14 +17,23 @@
   "author": "devil",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
     "css-loader": "^0.27.3",
+    "file-loader": "^0.10.1",
     "node-sass": "^4.5.0",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.14.1",
-    "webpack": "^2.2.1"
+    "svg-url-loader": "^2.0.2",
+    "url-loader": "^0.5.8",
+    "vue-svg-icon": "^1.2.9",
+    "vue-svg-loader": "^0.1.2",
+    "webpack": "^2.2.1",
+    "webpack-uglify-js-plugin": "^1.1.9"
   },
   "dependencies": {
     "extract-text-webpack-plugin": "^2.1.0",
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "vue": "^2.2.4"
   }
 }

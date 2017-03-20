@@ -14,7 +14,7 @@ module.exports = {
     filename: '[name].js',
     path: path.resolve(__dirname, './output')
   },
-  
+
   plugins: [
     new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
@@ -53,9 +53,9 @@ module.exports = {
         })
        },
        {
-        test: /\.(eot|woff(2)?|ttf|svg|png|jpg)$/,
-        loader: 'url-loader'
-       },
+            test: /\.(png|jpg|gif|woff2?|ttf|eot|svg|otf)$/,
+            loader: 'file-loader?name=../assets/img/[name].[ext]'
+        }
      ]
   },
   devtool: NODE_ENV == 'development' ? 'source-map' : false

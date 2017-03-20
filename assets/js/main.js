@@ -26,7 +26,7 @@ import Vue from 'vue/dist/vue.js';
         img.src = $('.image-box img').attr('src');
       },
       checkNewImage: function() {
-          $('.image-url-input').show();
+          $('.image-url-input').show().addClass('visible');
           $('.image-url-input').animate({'marginRight':'25px', 'opacity': '1'}, 700);
 
           if ($('.image-url-input').css('display') == 'block') {
@@ -37,6 +37,7 @@ import Vue from 'vue/dist/vue.js';
             if (result) {
               $(".exampl-image").replaceWith("<img src='" + result.input + "' class='exampl-image'>");
               console.log(result.input) 
+              $('.image-url-input').hide(200).removeClass('visible');
             } else {
               console.log('not available link');
             }
@@ -49,7 +50,7 @@ import Vue from 'vue/dist/vue.js';
           }
     }
   });
-
+ 
   app.getPrimaryColors();
 
 

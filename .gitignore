@@ -1,5 +1,6 @@
 # игнорировать все файлы в каталоге build/
 build/
 node_modules/
-*.txt
+assets/css/
+/*.txt
 /test.html
