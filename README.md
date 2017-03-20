@@ -16,10 +16,10 @@ How to setup from PowerShell (or Linux terminal):
 3. webpack
 
 Differences between 'development' and 'production' versions:
-development: creating source-maps of scripts and styles;
-production: uglifying files and hiding messages from console;
+* development: creating source-maps of scripts and styles;
+* production: uglifying files and hiding messages from console;
 
 Enable 'production' version:
-from PowerShell: $env:NODE_ENV="production"; webpack
-from Linux: NODE_ENV=production webpack
+* from PowerShell: $env:NODE_ENV="production"; webpack
+* from Linux: NODE_ENV=production webpack
 
