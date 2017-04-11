@@ -1,0 +1,97 @@
+    .image-content {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        text-align: center;
+        align-items: center;
+        margin: 0 auto;
+
+        .image-box {
+            position: relative;
+            max-width: 80%;
+            width: 600px;
+            margin: auto;
+            //height: 330px;
+            overflow: hidden;
+
+            .exampl-image {
+                max-width: 100%;
+                min-height: 110px;
+                max-height: 500px;
+            }
+            img.search-icon {
+                padding: 6px;
+            }
+        }
+
+        .palette {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+
+            .color {
+                width: 35px;
+                height: 35px;
+                margin: 20px;
+                background: $main-text-color;
+                flex-basis: 20%;
+            }
+        }
+    }
+
+    /* Actions UI */
+
+    .image-url {
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 6px;
+                width: 40px;
+                height: 40px;
+                border-top: 1px solid rgba(250,250,25,.3);
+                border-right: 1px solid rgba(250,250,25,.3);
+
+                background: rgba(150,150,150,.3); // url('../search-icon.svg') no-repeat center center;
+            }
+
+            .image-url:hover {
+                border-color: rgba(0,0,0,0);
+                transition: .3s;
+
+            }
+            .image-url-input {
+                display: none;
+                outline: none;
+                cursor: default;
+
+                position: absolute;
+                top: -3px;
+                right: 0px;
+                margin: 4px;
+                opacity: .5;
+                width: 220px;
+                min-width: 220px;
+                max-width: 220px;
+                height: 40px;
+                
+                font: 18px/40px "PT Sans", sans-serif;
+                text-indent: 10px;
+                text-overflow: ellipsis;
+
+                border: 1px solid rgba(0,0,0,0);
+                background: rgba(250,250,250,.3);
+
+
+                transform: translateX(0px);
+            }
+            .image-url-input:active, .image-url-input:focus {
+                background: #fff;
+                border: 1px solid rgba(255,255,155,.8);
+                transition: .3s;
+            }
+
+            .image-url-input.visible {
+                display: block;
+                transform: translateX(-45px);
+                transition: transform .3s;
+            }

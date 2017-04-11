@@ -1,0 +1,89 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "resemblejs",
+        "scope": null,
+        "escapedName": "resemblejs",
+        "name": "resemblejs",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\OpenServer\\domains\\github\\simpleadaptive"
+    ]
+  ],
+  "_from": "resemblejs@latest",
+  "_id": "resemblejs@2.2.3",
+  "_inCache": true,
+  "_location": "/resemblejs",
+  "_nodeVersion": "4.4.5",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/resemblejs-2.2.3.tgz_1482424352880_0.6887367302551866"
+  },
+  "_npmUser": {
+    "name": "jamescryer",
+    "email": "james.cryer@huddle.com"
+  },
+  "_npmVersion": "2.15.5",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "resemblejs",
+    "scope": null,
+    "escapedName": "resemblejs",
+    "name": "resemblejs",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/resemblejs/-/resemblejs-2.2.3.tgz",
+  "_shasum": "2c8fca3ed399a9746c7c4980d2fc9a8cb1b94a62",
+  "_shrinkwrap": null,
+  "_spec": "resemblejs",
+  "_where": "C:\\OpenServer\\domains\\github\\simpleadaptive",
+  "author": {
+    "name": "James Cryer"
+  },
+  "bugs": {
+    "url": "https://github.com/Huddle/Resemble.js/issues"
+  },
+  "dependencies": {},
+  "description": "Image analysis and comparison with HTML5",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "2c8fca3ed399a9746c7c4980d2fc9a8cb1b94a62",
+    "tarball": "https://registry.npmjs.org/resemblejs/-/resemblejs-2.2.3.tgz"
+  },
+  "gitHead": "405febb7594587e4af5b730f66e051f4f5700194",
+  "homepage": "https://github.com/Huddle/Resemble.js",
+  "keywords": [
+    "comparison",
+    "visual",
+    "image",
+    "diff",
+    "compare",
+    "html5"
+  ],
+  "license": "MIT",
+  "main": "resemble.js",
+  "maintainers": [
+    {
+      "name": "jamescryer",
+      "email": "james.cryer@huddle.com"
+    }
+  ],
+  "name": "resemblejs",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Huddle/Resemble.js.git"
+  },
+  "scripts": {},
+  "version": "2.2.3"
+}

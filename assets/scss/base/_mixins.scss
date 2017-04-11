@@ -1,0 +1,36 @@
+
+@mixin wrapper($width, $padding) {
+    width: $width;
+    max-width: $width;
+    padding: $padding;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+@mixin menu($color) {
+    width: 600px;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    color: $color;
+    text-transform: uppercase;
+}
+
+@mixin flex-block($basis, $minwidth) {
+    display: flex;
+    flex-basis: $basis;
+    min-width: $minwidth;
+}
+
+@mixin scrolls($font, $font-color) {
+    width: 100%;
+    font: $font;
+    color: $font-color;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    position: absolute;
+    bottom: 0;
+}
