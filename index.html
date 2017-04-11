@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="./output/bundle.css">
 </head>
 <body>
-    <header class="header">
+<div id="app-content">
+    <!-- header class="header">
         <div class="wrapper">
             <ul class="top-menu">
                 <li> Primary colors </li>
@@ -25,15 +26,17 @@
             </ul>
         </div>
 
-        <div class="wrapper image-content" id="app-content"> 
+        <div class="wrapper image-content"> 
+
             <div class="image-box" v-on:click="getPrimaryColors">
+                <img :src="source" class="exampl-image" alt="">
+            </div>
+
             <div class="image-url">
                 <img src="./assets/img/search-icon.svg" class="search-icon" alt="Check image url" 
                  @click="handler('checkNewImage','getPrimaryColors')" >
                 <input type="text" class="image-url-input" value="test" 
                  @keyup.enter="handler('checkNewImage','getPrimaryColors')" >
-            </div>
-                <img :src="source" class="exampl-image" alt="">
             </div>
 
             <div class="palette"> 
@@ -49,13 +52,89 @@
             <span>scroll down to see more</span>
             <img src="./assets/img/Double_Arrow.png" alt="scroll down to see more">
         </div>
+
+    </header -->
+
+
+    <header class="section image">
+        <div class="wrapper parralax">
+            <ul class="top-menu">
+                <li> <a href="#"> Primary colors </a> </li>
+                <li> <a href="https://github.com/whoneedsthedevil"> Github </a> </li>
+                <li> <a href="#about-section"> ... </a> </li>
+            </ul>
+            <ul class="mobile-menu">
+                <li>MENU
+                    <ul class="toggle-menu">
+                        <li> <a href="#"> Primary colors </a> </li>
+                        <li> <a href="https://github.com/whoneedsthedevil"> Github </a> </li>
+                        <li> <a href="#about-section"> ... </a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="wrapper image-content"> 
+
+            <div class="image-box">
+
+                <div class="search-icon" 
+                     v-on:click="handler(getPrimaryColors, checkNewImage)" >
+                    <img src="./assets/img/search.png" 
+                        alt="Check image url" >
+                </div>
+                <div class="form-group">
+                    <input type="text" 
+                        v-bind:class="[inputVisible ? 'add' : '', 'image-url-input']"
+                        v-model="checkSrc" placeholder="Type your url" 
+                        @keyup.enter="getPrimaryColors" >
+                </div>
+
+
+                <img :src="source" class="exampl-image" alt="">
+            </div>
+
+            <div class="image-url">
+
+                    <div class="thief palette"> 
+                        <h4>Primary colors</h4>
+                        <div class="container">
+                            <div class="color"></div>
+                            <div class="color"></div>
+                            <div class="color"></div>
+                            <div class="color"></div>
+                            <div class="color"></div> 
+                        </div>
+                    </div>
+
+
+                    <div class="resemble palette">
+                        <h4>Colors saturations</h4>
+                        <div class="container">
+                            <div class="color green"></div>
+                            <div class="color blue"></div>
+                            <div class="color red"></div>
+                        </div>
+                    </div>
+            </div>
+
+        </div>
+
+        <div class="scroll-section" id="scroll">
+            <div class="scroll-icon">
+                <span>scroll down to see more</span>
+                <img src="./assets/img/Double_Arrow.png" alt="scroll down to see more">
+            </div>
+
+        </div>
+
     </header>
 
     <section class="about" id="about-section">
-        <div class="wrapper">
+        <!-- div class="wrapper">
             <ul class="top-menu">
             </ul>
-        </div>
+        </div -->
 
         <div class="wrapper content">
             <div class="personal-photo">
@@ -64,11 +143,9 @@
             <div class="about-me">
                 <div class="title">Hello!</div>
                 <div class="text">
-                <p> I am from St-Petersburg, and me 24. Front-end enthusiast and HTML-follower. </p> 
-                <p> On current moment I'm working in 'Taggify', developing interfaces on Angular. Basically it is output data in tables and drawing charts by different plugins. </p>
-                <p> I am looking for tasks to practice my knowledge of JavaScript, first of all ReactJS and vue.js. I want to improve my competence and will be glad to any communications</p>
+                <p v-for="key in history" bind-data="key"> {{ key }} </p>
                 </div>
-                <div class="signature">pasha.abramov.92@gmail.com</div>
+                <div class="signature" @click="tryRessemble(source)">abstract.login@gmail.com</div>
             </div>
         </div>
 
@@ -77,7 +154,9 @@
             <img src="./assets/img/Double_Arrow_grey.png" alt="scroll down to see more">
         </div -->
     </section>
+</div>
     <script src="./assets/plugins/color-thief.min.js"></script>
+    <script src="./assets/plugins/resemblejs/resemble.js"></script> 
     <script src="./output/main.js"></script>
 </body>
 </html>

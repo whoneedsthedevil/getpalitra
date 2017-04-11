@@ -1,21 +1,5 @@
 @import 'reset';
 
-$bg-color: #fff;
-
-$text-font: 300 24px/1.2 'Open Sans', sans-serif;
-$menu-font: 24px/1.2 'PT Sans', sans-serif;
-$mobile-menu-font: 700 24px/1.2 'PT Sans', sans-serif;
-$scroll-font: 18px/1.2 'Open Sans', sans-serif;
-$about-menu-font: 24px/1.2 'NexaLight';
-$about-title-font: 56px/2 'OpenSans', sans-serif;
-$about-text-font: 300 24px/1.2 'Open Sans', sans-serif;
-$signature-font: 600 36px/1.4 'Open Sans';
-
-$main-text-color: #f1f1f1;
-$about-menu-color: #bebebe;
-$about-text-color: #202020;
-$about-scroll-color: #cbcbcb;
-
 @font-face {
     font-family: 'NexaLight';
     src: url('../fonts/NexaLight.eot');
@@ -27,43 +11,17 @@ $about-scroll-color: #cbcbcb;
 
 }
 
+@import 'base/_mixins';
+@import 'base/_variables';
+@import 'base/_placeholders';
+
+@import 'framework/grid';
+
 body {
     max-width: 100%;
     overflow-x: hidden;
     background: $bg-color;
     font: $text-font;
-}
-
-@mixin wrapper($width, $padding) {
-    width: $width;
-    max-width: $width;
-    padding: $padding;
-    margin: auto;
-    display: flex;
-    flex-flow: row nowrap;
-}
-
-@mixin menu($color) {
-    width: 600px;
-    margin: auto;
-    display: flex;
-    flex-flow: row nowrap;
-    color: $color;
-    text-transform: uppercase;
-}
-
-@mixin scrolls($font, $font-color) {
-    width: 600px;
-    cursor: pointer;
-    font: $font;
-    color: $font-color;
-    text-transform: uppercase;
-    display: flex;
-    flex-flow: column nowrap;
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    margin: 50px 0 0 -300px;
 }
 
 header {
@@ -72,82 +30,135 @@ header {
     min-height: 850px;
     background: url('../img/main_bg.jpg') no-repeat center center;
     background-size: 100% 100%;
+}
 
-    .wrapper {
-        @include wrapper(80%, 40px);
-        border-bottom: 1px solid $main-text-color;
+.wrapper {
+    @include wrapper(80%, 40px);
+    border-bottom: 1px solid $lightgrey-color;
+}
 
-        ul.top-menu {
-            @include menu($main-text-color);
-            justify-content: space-around;
+ul.top-menu {
+    @include menu($lightgrey-color);
+    justify-content: space-around;
 
-            li {
-                margin: auto;
-                font: $menu-font;
+    li {
+        position: relative;
+        margin: auto;
+        font: $menu-font;
 
-                a {
-                    color: $main-text-color;
-                    outline: none;
-                    text-decoration: none;
-                }
-            }
-        }
-        ul.mobile-menu {
-            display:none;
-            justify-content: flex-start;
+        a {
+            color: $lightgrey-color;
+            outline: none;
+            text-decoration: none;
         }
     }
+    li:hover {
 
-    .image-content {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-around;
-        text-align: center;
-        align-items: center;
-        margin: 0 auto;
+
+        a {
+            color: $bright-blue;
+            transition: .4s;
+        }
+    }
+}
+ul.mobile-menu {
+    display:none;
+    justify-content: flex-start;
+}
+
+    /*
+        IMAGE CONTENT
+                       */
+
+    .section.image {
+        background: url('../img/main_bg.jpg') no-repeat center center;
+        background-size: 100% 100%;
+        height: 100%;
+        min-height: 640px;
+    }
+
+        .image-content {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            direction: rtl;
+        }
 
         .image-box {
             position: relative;
-            max-width: 80%;
+            @include flex-block(60%, 400px);
             width: 600px;
-            margin: auto;
-            //height: 330px;
+            height: 500px;
             overflow: hidden;
 
-            .image-url {
+            img {
+                height: auto;
+                width: 500;
+                margin: auto;
+                padding: 20px;
+                max-height: 500px;
+                min-height: 150px;
+                max-width: 100%;
+                min-width: 200px;
+
+            }
+        }
+
+        @media all and (max-width: 520px) {
+            .image-content {
+                flex-flow: row wrap;
+            }
+        }
+
+
+            .search-icon {
+                position: absolute;
+                z-index: 2;
+                transform: translateX(5px);
+                width: 38px;
+                height: 38px;
+                padding: 2px;
+                right: 10px;
+                overflow: hidden;
+                background: rgba(150,150,150,.3); 
+
+            }
+            .image-box .search-icon img {
+                position: absolute;
+                padding: 0;
+                    width: 35px;
+                    min-width: 35px;
+                    height: 35px;
+                    min-height: 35px;
+            }
+
+            .search-icon:hover {
+                border-color: rgba(0,0,0,0);
+                transition: .3s;
+            }
+
+            .form-group {
                 position: absolute;
                 top: 0;
                 right: 0;
-                margin: 6px;
-                width: 40px;
-                height: 40px;
-                border-top: 1px solid #f5f5f5;
-                border-right: 1px solid #f5f5f5;
-
-                background: rgba(150,150,150,.3); // url('../search-icon.svg') no-repeat center center;
+                width: 350px;
+                height: 43px;
+                overflow: hidden;
             }
 
-            .image-url:hover {
-                border-color: rgba(0,0,0,0);
-                transition: .3s;
-
-            }
             .image-url-input {
-                display: none;
-                outline: none;
                 cursor: default;
 
-                position: absolute;
-                top: -2px;
-                right: 0px;
-                margin: 4px;
+                position: relative;
+
+                right: -321px;
                 opacity: .5;
-                width: 220px;
+                width: 340px;
                 min-width: 220px;
-                max-width: 220px;
+                max-width: 340px;
                 height: 40px;
                 
-                font: 30px/40px "PT Sans", sans-serif;
+                font: 18px/40px "PT Sans", sans-serif;
                 text-indent: 10px;
                 text-overflow: ellipsis;
 
@@ -155,48 +166,81 @@ header {
                 background: rgba(250,250,250,.3);
 
 
-                transform: translateX(0px);
+                transform: translateX(0);
+                transition: .3s;
+            }
+
+            .add {
+                transform: translateX(-370px);
+                background: rgba(255,255,250,.5);
+                transition: .3s;
             }
             .image-url-input:active, .image-url-input:focus {
                 background: #fff;
                 border: 1px solid rgba(255,255,155,.8);
                 transition: .3s;
             }
-
-            .image-url-input.visible {
-                display: block;
-                transform: translateX(-45px);
-                transition: transform .3s;
-            }
-
-            .exampl-image {
-                max-width: 100%;
-                min-height: 110px;
-                max-height: 500px;
-            }
-            img.search-icon {
-                padding: 6px;
-            }
+            
+        
+        .image-url {
+            position: relative;
+            text-align: center;
+            text-indent: 4px;
+            @include flex-block(30%, 300px);
+            flex-flow: column nowrap;
+            align-items: flex-start;
         }
 
         .palette {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-between;
+            width: 250px;
+            margin: 35px 0;
 
-            .color {
-                width: 35px;
-                height: 35px;
-                margin: 20px;
-                background: $main-text-color;
-                flex-basis: 20%;
+            h4 {
+                padding: 5px;
+                background: rgba(255,255,250,.5);
+            }
+
+            .container {
+                display: flex;
+                margin: 10px 0;
+                flex-flow: row nowrap;
+                justify-content: space-around;
             }
         }
-    }
 
-    
+        .color {
+            margin: 5px;
+            text-align: center;
+            font: 14px/40px 'Courier';
+            flex-basis: 20%;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0,0,0,.3);
+            transform: scale(1);
+            transition: .2s;
+            cursor: default;
+        }
+        .resemble .color {
+            border-radius: none;
+            color: rgba(250,250,250,.9);
+        }
+        .color:hover {
+            transform: scale(1.2);
+            transition: .2s;
+        }
+
+
+    /* scroll-section is ANNOING */
     .scroll-section {
-        @include scrolls($scroll-font, $main-text-color);
+        @include scrolls($scroll-font, $lightgrey-color);
+
+        .scroll-icon {
+            cursor: pointer;
+            width: 450px;
+            margin: auto;
+            padding: 20px 0 80px;
+        }
 
         span {
             text-align: center;
@@ -205,10 +249,10 @@ header {
             margin: 25px auto 0;
         }
     }
-}
+
 
 section.about {
-        display: none;
+        display: block;
     position: relative;
     min-height: 100%;
     padding-bottom: 70px;
@@ -219,7 +263,7 @@ section.about {
         border-bottom: 1px solid #bebebe;
 
         ul.top-menu {
-            @include menu($about-menu-color);
+            @include menu($black-color);
             justify-content: space-around;
 
             li {
@@ -249,13 +293,13 @@ section.about {
             .title {
                 font: $about-title-font;
                 margin: 0;
-                color: $about-text-color;
+                color: $black-color;
                 text-transform: uppercase;
             }
 
             .text {
                 font: $about-text-font;
-                color: $about-text-color;
+                color: $black-color;
 
                 p:not(:last-child) {
                     margin-bottom: 10px;
@@ -264,7 +308,7 @@ section.about {
 
             .signature {
                 font: $signature-font;
-                color: $about-text-color;
+                color: $black-color;
                 font-weight: 800;
                 margin: 60px 0;
             }
@@ -290,7 +334,7 @@ section.about {
 
 }
 
-.scroll-section:hover {
+.scroll-section .scroll-icon:hover {
     color: lighten($about-scroll-color, 10%);
 
     span {
@@ -402,7 +446,7 @@ li:hover {
 
             ul.mobile-menu {
                 display: block;
-                @include menu($main-text-color);
+                @include menu($lightgrey-color);
                 position: relative;
 
                 li {
@@ -413,7 +457,7 @@ li:hover {
                         display: none;
 
                         li {
-                            color: $main-text-color;
+                            color: $lightgrey-color;
                             padding: 10px 0;
                         }
                     }
