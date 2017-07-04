@@ -172,7 +172,7 @@ ul.mobile-menu {
 .image-url-input {
   cursor: default;
   position: relative;
-  right: -321px;
+  right: -341px;
   opacity: .5;
   width: 340px;
   min-width: 220px;
@@ -187,7 +187,7 @@ ul.mobile-menu {
   transition: .3s; }
 
 .add {
-  transform: translateX(-370px);
+  transform: translateX(-390px);
   background: rgba(255, 255, 250, 0.5);
   transition: .3s; }
 
