@@ -1,7 +1,7 @@
 # colorchecker
 Get five primary colors with specified url of image
 
-Demo: https://whoneedsthedevil.github.io/simpletrash/
+Demo: https://whoneedsthedevil.github.io/getpalitra/
 
 Used:
 1. color-thief.js - Grabs the dominant colors
