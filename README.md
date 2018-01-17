@@ -1,16 +1,16 @@
 # colorchecker
-Get five primary colors with specified url of image
+This app determinate five primary colors from specified url of image
 
 Demo: https://whoneedsthedevil.github.io/getpalitra/
 
-Used:
+Stack:
 1. color-thief.js - Grabs the dominant colors
-2. vue.js - pretty JS-framework
-3. jQuery - because I can
-4. SASS - SCSS
+2. vue.js - JS-framework
+3. jQuery 
+4. SCSS
 5. webpack - with a couple of simple settings
 
-How to setup from PowerShell (or Linux terminal):
+How to setup from cmd/PowerShell:
 1. cd folder
 2. npm install
 3. webpack
